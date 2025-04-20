@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+<div class="container">
+    <h3 class="display-8">Brain Tumor Classification</h3>
+    <p>Upload an MRI image to classify the tumor type.</p>
+
+    <!-- Image Upload Form -->
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <div class="input-group mb-3" style="width: 500px;">
+            <input type="file" class="form-control" name="image_name" required>
+            <button class="btn btn-outline-primary" type="submit">Upload & Predict</button>
+        </div>
+    </form>
+
+    {% if fileupload %}
+    <h3 class="display-8">Predicted Image</h3>
+    <img src="/static/predict/predicted_image.jpg" width="500" class="img-fluid" alt="Predicted Image">
+    <hr />
+    <h4>Prediction Result:</h4>
+    <table class="table table-striped">
+        <tr>
+            <th>Detected Tumor</th>
+        </tr>
+        {% for element in report %}
+        <tr>
+            <td>{{ element[0] }}</td>
+        </tr>
+        <tr>
+            <td>Confidence: {{ report[0][1] | round(2) }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+{% endblock %}
