@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% block bodyblock %}
@@ -19,7 +18,7 @@
     {% endwith %}
 
     <!-- Image Upload Form -->
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form action="/app/braintumor/" method="POST" enctype="multipart/form-data">
         <div class="input-group mb-3" style="width: 500px;">
             <input type="file" class="form-control" name="image_name" required>
             <button class="btn btn-outline-primary" type="submit">Upload & Predict</button>
