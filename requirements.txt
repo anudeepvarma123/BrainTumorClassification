@@ -1,5 +1,6 @@
-Flask
-numpy
-opencv-python
-tensorflow
-keras
+tensorflow==2.11.0  # Compatible with Python 3.8 – 3.10
+keras==2.11.0       # Matches TensorFlow version
+opencv-python==4.8.0.76  # For cv2
+Flask==2.2.5
+numpy==1.23.5
+
